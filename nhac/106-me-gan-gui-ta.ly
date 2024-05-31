@@ -3,75 +3,72 @@
 \include "english.ly"
 
 \header {
-  title = "Làm Sao Hát"
-  poet = "Ý lời ca: Thánh Cyrille d'Alexandie"
+  title = "Mẹ Gần Gũi Ta"
+  poet = "Ý lời ca: Đức Bênêdictô XVI"
   composer = "Lm. Kim Long"
   tagline = ##f
 }
 
 % Nhạc
-nhacPhanMot = \relative c' {
-  \key f \major
+nhacPhanMot = \relative c'' {
+  \key g \major
   \time 2/4
-  \partial 4 c8 d |
-  f4. e8 |
-  e g g g |
-  a4 f8 f |
-  f4. f8 |
-  bf8 a g bf |
-  c4. d16 (c) |
-  a4 r8 g |
-  c, c a' (g) |
-  f2 ~ |
-  f4 \bar "|."
+  \partial 4. d8 b b |
+  b4 g8 a |
+  a16 (g) e8 e4 ~ |
+  e8 e16 (fs) d8 a' |
+  b g g b |
+  c4. b8 |
+  a d fs, a |
+  g2 ~ |
+  g4 r \bar "|."
 }
 
 nhacPhanHai = \relative c' {
-  \key f \major
+  \key g \major
   \time 2/4
-  \partial 4 e8. g16 |
-  g8 f f g |
-  a2 |
-  g8 f f a |
-  bf4. g8 |
-  g bf a g |
-  c2 |
-  c8 bf d (c16 bf) |
-  g4. g8 |
-  e (d) g c, |
-  c4 \bar "||"
+  fs8 fs g a |
+  b4 g8 c |
+  c b c e |
+  a,4 r8 a |
+  fs4. fs8 |
+  fs g e fs |
+  d2 |
+  d8 fs a a |
+  g2 ~ |
+  g8 \bar "||"
 }
 
 % Lời
 loiPhanMot = \lyricmode {
-  Làm sao hát bài ngợi ca cho cân xứng,
-  Vì nhờ Mẹ toàn thể địa cầu hỷ hoan nhảy mừng,
-  Ôi lạy Mẹ Chúa Trời.
+  Đức Ma -- ri -- a được vinh thăng về trời
+  ở cùng Thiên Chúa và trong Thiên Chúa
+  nên Mẹ rất gần gũi ta.
 }
 
 loiPhanHai = \lyricmode {
   <<
     {
       \set stanza = "1."
-      Mẹ sinh ra mặt trời công chính,
-      vương trượng của chân lý,
-      Đền thờ không thể tàn phá,
-      Ôi Mẹ Chúa Trời, chúng con kính chào Mẹ.
+      Là Mẹ Con Thiên Chúa,
+      Mẹ tham gia quyền năng của Ngài,
+      thông phần vào lòng nhân hậu của Ngài
+      mà thương mến chúng ta.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "2."
       \override Lyrics.LyricText.font-shape = #'italic
-      Nhờ qua tay Mẹ mà Con Chúa tiêu diệt mọi tăm tối,
-      rạng ngời chiếu soi trần thế.
-      Ôi Mẹ Chúa Trời, chúng con kính chào Mẹ.
+      Ngày còn ở dương thế Mẹ thân quen chỉ một ít nguyoiwf,
+      Bây giờ được về hiển trị trên trời,
+      Mẹ thương hết chúng nhân.
     }
     \new Lyrics {
 	    \set associatedVoice = "beSop"
 	    \set stanza = "3."
-      Kìa bao tông đồ Mẹ thôi thúc loan truyền cùng muôn nước
-      đợi chờ phúc ân giải thoát.
-      Ôi Mẹ Chúa Trời, chúng con kính chào Mẹ.
+      Mẹ dạy ta ghi nhớ và siêng năng tìm hiểu rõ ràng,
+      suy niệm từng lời Con Mẹ chỉ dạy
+      và tuân giữ tín trung.
     }
   >>
 }
@@ -122,7 +119,7 @@ loiPhanHai = \lyricmode {
   >>
   \layout {
     \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #2
+    \override Lyrics.LyricSpace.minimum-distance = #1.5
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
