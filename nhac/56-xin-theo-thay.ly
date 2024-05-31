@@ -241,6 +241,7 @@ loiPhienKhucBonBas = \lyricmode {
 			       "Deja Vu Serif Condensed"
 			       (/ 20 20)))
   print-page-number = ##f
+  page-count = 3
 }
 
 % Đổi kích thước nốt cho bè phụ
@@ -297,6 +298,7 @@ notBePhu =
       \new Lyrics \lyricsto nhacThamChieu \loiPhienKhucMotSop
       \new Lyrics \lyricsto nhacThamChieu \loiPhienKhucHaiSop
       \new Lyrics \lyricsto nhacThamChieu \loiPhienKhucBaSop
+      \new Lyrics \lyricsto nhacThamChieu \loiPhienKhucBonSop
       >>
     \new Staff <<
         \clef "bass"
@@ -306,6 +308,7 @@ notBePhu =
         \new Lyrics \lyricsto beBas \loiPhienKhucMotBas
         \new Lyrics \lyricsto beBas \loiPhienKhucHaiBas
         \new Lyrics \lyricsto beBas \loiPhienKhucBaBas
+        \new Lyrics \lyricsto beBas \loiPhienKhucBonBas
     >>
   >>
   \layout {
