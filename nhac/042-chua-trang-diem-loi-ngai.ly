@@ -3,7 +3,7 @@
 \include "english.ly"
 
 \header {
-  title = "Cha Trang Điểm Lời Ngài"
+  title = "Chúa Trang Điểm Lời Ngài"
   poet = "Ý lời ca: Th. Ephrem"
   composer = "Lm. Kim Long"
   tagline = ##f
