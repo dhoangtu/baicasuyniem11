@@ -27,7 +27,16 @@ Nhược điểm của Lilypond:
 
 Frescobaldi
 
-==
+===Chuyển bìa từ file ODT sang PDF
+Print (máy in PDF tự nhận biết khổ A5 và xuất ra file PDF khổ A5)
+hoặc Export PDF
+
+===Bỏ vạch nhịp, tắt vạch nhịp tự động
+\layout {
+  \set Staff.measureBarType = #'()
+}
+
+==Kích thước 1 dòng nhạc
 \paper {  % Start paper block
   indent = 0     % don't indent first system
   line-width = 130   % shorten line length to suit music
