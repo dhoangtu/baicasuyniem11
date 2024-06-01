@@ -27,9 +27,13 @@ Nhược điểm của Lilypond:
 
 Frescobaldi
 
-===Chuyển bìa từ file ODT sang PDF
+===Chuyển bìa trong từ file ODT sang PDF
 Print (máy in PDF tự nhận biết khổ A5 và xuất ra file PDF khổ A5)
 hoặc Export PDF
+
+===chuyển bìa trước từ file ODT sang PDF
+Print bìa trước khổ A4 ra PDF khổ A4
+Mở file PDF khổ A4 và in (chọn Fit hoặc Shrink) chuyển sang khổ A5
 
 ===Bỏ vạch nhịp, tắt vạch nhịp tự động
 \layout {
