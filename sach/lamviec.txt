@@ -27,6 +27,11 @@ Nhược điểm của Lilypond:
 
 Frescobaldi
 
+==
+\paper {  % Start paper block
+  indent = 0     % don't indent first system
+  line-width = 130   % shorten line length to suit music
+}  % End paper block
 
 ===
 Bỏ ký hiệu Số Chỉ Nhịp
