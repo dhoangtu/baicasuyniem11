@@ -63,7 +63,7 @@ nhacPhanMot = \relative c' {
   r8 \bar "||"
 }
 
-nhacPhanHai = \relative c' {
+nhacPhanHaiSop = \relative c' {
   \key f \major
   \time 2/4
   \partial 8 c8 |
@@ -72,54 +72,46 @@ nhacPhanHai = \relative c' {
   e e a a |
   a4 r8 a |
   g f bf g |
-  <<
-    {
-      \voiceOne
-      c2 ~ |
-      c8 bf
-    }
-    \new Voice = "bePhu" \notBePhu -2 {
-      \voiceTwo
-      r8 c, e f |
-      g4
-    }
-  >>
-  \oneVoice
-  <<
-    {
-      d'8 bf |
-      g4 g8 g |
-      f4. f8 |
-      bf4 r8 bf |
-      g4 g8 c |
-    }
-    {
-      g8 f |
-      e4 e8 e |
-      d4. d8 |
-      g4 r8 f |
-      e4 e8 e |
-    }
-  >>
+  c2 ~ |
+  c8 bf
+  d8 bf \break
+  g4 g8 g |
+  f4. f8 |
+  bf4 r8 bf |
+  g4 g8 c |
+  f,2 |
+  e8 e g a |
+  d,4. d8 |
+  d g f d |
+  c4. g'8 |
+  e4. f8 |
+  f2 ~ |
+  f4 \bar "|."
+}
+
+nhacPhanHaiAlto = \relative c' {
+  \key f \major
+  \time 2/4
+  \partial 8 c8 |
+  c4 f |
+  f4. e8 |
+  e e a a |
+  a4 r8 a |
+  g f bf g |
+  r8 c, e f |
+  g4 g8 f |
+  e4 e8 e |
+  d4. d8 |
+  g4 r8 f |
+  e4 e8 e |
   f2 |
   e8 e g a |
   d,4. d8 |
   d g f d |
-  c4.
-  <<
-    {
-      g'8 |
-      e4. f8 |
-      f2 ~ |
-      f4 \bar "|."
-    }
-    {
-      b,!8 |
-      c4. bf8 |
-      a2 ~ |
-      a4
-    }
-  >>
+  c4. b!8 |
+  c4. bf8 |
+  a2 ~ |
+  a4
 }
 
 nhacPhanBaSop = \relative c'' {
@@ -207,13 +199,19 @@ loiPhanMot = \lyricmode {
   >>
 }
 
-loiPhanHai = \lyricmode {
+loiPhanHaiSop = \lyricmode {
   Lạy Mẹ La -- vang, Mẹ phù hộ các giáo hữu,
   Chúng con về đây hành hương
   từ khắp nẻo đường
   Tung hô Mẹ từ ái, cảm tạ và khẩn nài:
   Nguyện Mẹ thương chúc lành
   và dạy chúng con theo Mẹ suốt đời xin vâng.
+}
+
+loiPhanHaiAlto = \lyricmode {
+  \repeat unfold 15 { _ }
+  \override Lyrics.LyricText.font-shape = #'italic
+  về đây hành hương khắp nẻo
 }
 
 loiPhanBa = \lyricmode {
@@ -260,18 +258,24 @@ loiPhanBa = \lyricmode {
 }
 
 \score {
+  \new ChoirStaff
   <<
-    \new Staff <<
-        \clef treble
-        \new Voice = beSop {
-          \nhacPhanHai
-        }
-      \new Lyrics \lyricsto beSop \loiPhanHai
-    >>
+    \new Staff \with {
+        printPartCombineTexts = ##f
+      }
+      <<
+      \new Voice \partCombine 
+        \nhacPhanHaiSop
+        \nhacPhanHaiAlto
+      \new NullVoice = nhacThamChieuSop \nhacPhanHaiSop
+      \new Lyrics \lyricsto nhacThamChieuSop \loiPhanHaiSop
+      \new NullVoice = nhacThamChieuAlto \nhacPhanHaiAlto
+      \new Lyrics \lyricsto nhacThamChieuAlto \loiPhanHaiAlto
+      >>
   >>
   \layout {
     \override Staff.TimeSignature.transparent = ##t
-    \override Lyrics.LyricSpace.minimum-distance = #1.5
+    \override Lyrics.LyricSpace.minimum-distance = #1
     \override Score.BarNumber.break-visibility = ##(#f #f #f)
     \override Score.SpacingSpanner.uniform-stretching = ##t
     ragged-last = ##f
